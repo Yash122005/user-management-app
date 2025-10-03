@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+        <div class="w-full h-full bg-zinc-900 p-5 ">
+            <div class="mb-5 px-2">
+                <a href="/read" class="text-blue-400 mb-4 hover:text-white transition-colors">All Users</a>
+            </div>
+
+            <h1 class="text-3xl tracking-tighter mb-3 text-white">Create User</h1>
+            <form action="/create" method="POST" class="flex flex-col gap-4 max-w-md">
+             <input name = "name"type="text" placeholder="Enter your name" class=" rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-5 py-2 text-gray-300" />
+             <input name = "email"type="text" placeholder="Enter your Email" class="rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-5 py-2 text-gray-300" />
+             <input name = "image"type="text" placeholder="Enter your image url" class="rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-5 py-2 text-gray-300" />
+             <input type="submit" value="create user" class="rounded-md border border-gray-300 bg-blue-500 hover:bg-blue-600 text-white font-semibold cursor-pointer px-5 py-2" />
+            </form>
+        </div>
+</body>
+</html>
