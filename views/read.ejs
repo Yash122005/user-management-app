@@ -8,24 +8,42 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-        <div class="w-full min-h-full bg-zinc-900 p-6 ">
-            <div class="mb-5 px-1">
-                <a href="/" class="text-blue-400 mb-4 hover:text-white transition-colors">Back to home</a>
-            </div>
-
-            <h1 class="text-3xl tracking-tighter mb-3 text-white">All Users</h1>
-           <div class="users flex gap-5 flex-wrap">
-           <% users.forEach((user) => { %>
-                <div class="user max-w-72 p-10 bg-zinc-800 rounded-lg">
-                <img src= "<%= user.image %>" alt="user image" class="w-32 h-32 rounded-full object-cover mx-auto mb-5" />
-                <h2 class="text-xl text-white font-semibold mb-2 text-center"><%= user.name %> </h2>
-                <p class="text-gray-300 mb-5 text-center"><%= user.email %></p>
-                <div class="flex justify-between gap-2">
-                    <a href="/edit/<%= user.id %>" class="rounded-md border border-gray-300 bg-blue-500 hover:bg-blue-600 text-white font-semibold cursor-pointer px-5 py-2">Edit</a>
-                    <a href="/delete/<%= user.id %>" class="rounded-md border border-gray-300 bg-red-500 hover:bg-red-600 text-white font-semibold cursor-pointer px-5 py-2">Delete</a>
+        <div class="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-8">
+          <div class="flex items-center justify-between mb-8">
+            <a href="/" class="inline-flex items-center gap-2 text-blue-400 hover:text-white transition-colors font-medium text-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+              Home
+            </a>
+            <h1 class="text-4xl font-extrabold tracking-tight text-white">All Users</h1>
+          </div>
+          <div class="users grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <% users.forEach((user) => { %>
+              <div class="user bg-zinc-800 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow p-8 flex flex-col items-center">
+                <div class="relative mb-5">
+                  <img src="<%= user.image %>" alt="user image" class="w-28 h-28 rounded-full object-cover border-4 border-blue-500 shadow-md" />
+                  <span class="absolute bottom-0 right-0 bg-green-500 w-5 h-5 rounded-full border-2 border-zinc-800"></span>
                 </div>
-            </div>
-          <% }) %>
+                <h2 class="text-2xl text-white font-bold mb-1 text-center"><%= user.name %></h2>
+                <p class="text-gray-400 mb-4 text-center text-sm"><%= user.email %></p>
+                <div class="flex gap-3 mt-auto">
+                  <a href="/edit/<%= user.id %>" class="inline-flex items-center gap-1 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 shadow transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536M9 13l6.536-6.536a2 2 0 112.828 2.828L11.828 15.828a2 2 0 01-2.828 0L9 13z" />
+                    </svg>
+                    Edit
+                  </a>
+                  <a href="/delete/<%= user.id %>" class="inline-flex items-center gap-1 rounded-lg bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 shadow transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    Delete
+                  </a>
+                </div>
+              </div>
+            <% }) %>
+          </div>
         </div>
 </body>
 </html>

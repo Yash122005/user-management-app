@@ -8,18 +8,54 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="bg-zinc-900">
-        <div class="w-full min-h-full p-5 ">
-            <div class="mb-5 px-2">
-                <a href="/read" class="text-blue-400 mb-4 hover:text-white transition-colors">All Users</a>
+        <div class="flex items-center justify-center min-h-screen bg-zinc-900">
+          <div class="bg-zinc-800 rounded-xl shadow-lg p-8 w-full max-w-lg">
+            <div class="mb-6 flex items-center justify-between">
+              <h1 class="text-3xl font-bold text-white tracking-tight">Update User</h1>
+              <a href="/read" class="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium underline">All Users</a>
             </div>
-
-            <h1 class="text-3xl tracking-tighter mb-3 text-white">Update User</h1>
-            <form action="/update/<%= user._id %>" method="POST" class="flex flex-col gap-4 max-w-md">
-             <input value="<%= user.name %>" name = "name"type="text" placeholder="Enter your name" class=" rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-5 py-2 text-gray-300" />
-             <input value="<%= user.email %>" name = "email"type="text" placeholder="Enter your Email" class="rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-5 py-2 text-gray-300" />
-             <input value="<%= user.image %>" name = "image"type="text" placeholder="Enter your image url" class="rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-5 py-2 text-gray-300" />
-             <input type="submit" value="Update user" class="rounded-md border border-gray-300 bg-yellow-300 hover:bg-yellow-500 text-white font-semibold cursor-pointer px-5 py-2" />
+            <form action="/update/<%= user._id %>" method="POST" class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  value="<%= user.name %>"
+                  placeholder="Enter your name"
+                  class="w-full rounded-lg border border-gray-700 bg-zinc-900 text-gray-100 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value="<%= user.email %>"
+                  placeholder="Enter your email"
+                  class="w-full rounded-lg border border-gray-700 bg-zinc-900 text-gray-100 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                />
+              </div>
+              <div>
+                <label for="image" class="block text-sm font-medium text-gray-300 mb-1">Image URL</label>
+                <input
+                  id="image"
+                  name="image"
+                  type="text"
+                  value="<%= user.image %>"
+                  placeholder="Enter your image URL"
+                  class="w-full rounded-lg border border-gray-700 bg-zinc-900 text-gray-100 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 transition shadow"
+              >
+                Update User
+              </button>
             </form>
+          </div>
         </div>
 </body>
 </html>

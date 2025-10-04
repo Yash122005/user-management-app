@@ -8,18 +8,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-        <div class="w-full h-full bg-zinc-900 p-5 ">
-            <div class="mb-5 px-2">
-                <a href="/read" class="text-blue-400 mb-4 hover:text-white transition-colors">All Users</a>
+        <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-6">
+          <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl w-full max-w-lg p-8 flex flex-col items-center">
+            <h1 class="text-4xl font-bold text-white mb-6 text-center bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg">
+              User Management App
+            </h1>
+            <a href="/read" class="mb-6 text-blue-400 hover:text-pink-400 transition-colors font-medium text-lg underline decoration-dotted">
+              View All Users
+            </a>
+            <div class="w-full">
+              <h2 class="text-2xl font-semibold text-white mb-4 text-center">Create User</h2>
+              <form action="/create" method="POST" class="flex flex-col gap-5">
+                <input name="name" type="text" placeholder="Full Name" class="rounded-lg border border-gray-300 bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 px-4 py-3 transition-all" />
+                <input name="email" type="email" placeholder="Email Address" class="rounded-lg border border-gray-300 bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 px-4 py-3 transition-all" />
+                <input name="image" type="url" placeholder="Profile Image URL" class="rounded-lg border border-gray-300 bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 px-4 py-3 transition-all" />
+                <button type="submit" class="rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 text-white font-bold py-3 px-4 shadow-lg transition-all">
+                  Create User
+                </button>
+              </form>
             </div>
-
-            <h1 class="text-3xl tracking-tighter mb-3 text-white">Create User</h1>
-            <form action="/create" method="POST" class="flex flex-col gap-4 max-w-md">
-             <input name = "name"type="text" placeholder="Enter your name" class=" rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-5 py-2 text-gray-300" />
-             <input name = "email"type="text" placeholder="Enter your Email" class="rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-5 py-2 text-gray-300" />
-             <input name = "image"type="text" placeholder="Enter your image url" class="rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-5 py-2 text-gray-300" />
-             <input type="submit" value="create user" class="rounded-md border border-gray-300 bg-blue-500 hover:bg-blue-600 text-white font-semibold cursor-pointer px-5 py-2" />
-            </form>
+          </div>
         </div>
 </body>
 </html>
