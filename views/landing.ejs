@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System | Effortless Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0f172a',
+                        electric: '#3b82f6',
+                        softpurple: '#8b5cf6',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .light-beam {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 80vh;
+            background: conic-gradient(from 180deg at 50% -20%, transparent 40%, rgba(59, 130, 246, 0.15) 48%, rgba(139, 92, 246, 0.3) 50%, rgba(59, 130, 246, 0.15) 52%, transparent 60%);
+            filter: blur(60px);
+            opacity: 0.9;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-[#030712] text-white min-h-screen font-sans antialiased overflow-x-hidden relative">
+
+    <!-- Light Beam Background -->
+    <div class="light-beam"></div>
+
+    <!-- Navbar -->
+    <nav
+        class="fixed w-full z-50 glass-card border-b-0 border-white/10 px-6 py-4 flex justify-between items-center transition-all duration-300">
+        <div class="flex items-center gap-2">
+            <div
+                class="w-8 h-8 rounded bg-gradient-to-tr from-electric to-softpurple flex items-center justify-center font-bold">
+                UM</div>
+            <span class="text-xl font-bold tracking-wide">UserManage</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#features" class="hover:text-blue-400 transition-colors">Features</a>
+            <a href="/login" class="hover:text-blue-400 transition-colors">Login</a>
+            <a href="/login"
+                class="bg-gradient-to-r from-electric to-softpurple px-5 py-2 rounded-full hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5">Get
+                Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 z-10">
+
+        <!-- Background Glowing Orbs (Subdued for light beam) -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="flex-1 text-center lg:text-left z-10 opacity-0 animate-[fadeInUp_1s_ease-out_forwards]">
+            <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
+                Manage Your Users <br />
+                <span class="gradient-text">Effortlessly</span>
+            </h1>
+            <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Streamline your customer relations, handle authentication securely, and oversee your entire user base
+                from a fast, beautifully designed interface.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="/login"
+                    class="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-full text-lg font-bold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:-translate-y-1">
+                    Get Started
+                </a>
+                <a href="/login"
+                    class="glass-card px-8 py-4 rounded-full text-lg font-bold hover:bg-white/10 transition-all hover:-translate-y-1">
+                    Log In to Dashboard
+                </a>
+            </div>
+        </div>
+
+        <div
+            class="flex-1 relative w-full max-w-lg lg:max-w-none opacity-0 animate-[fadeInUp_1s_ease-out_0.3s_forwards]">
+            <!-- Dashboard Illustration / Mockup -->
+            <div
+                class="relative w-full aspect-[4/3] glass-card rounded-2xl p-4 shadow-2xl animate-float border-t border-l border-white/20">
+                <div class="flex gap-2 mb-4">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex justify-between items-end border-b border-gray-700 pb-4">
+                        <div>
+                            <div class="h-4 w-32 bg-gray-600 rounded mb-2"></div>
+                            <div class="h-8 w-16 bg-blue-500 rounded"></div>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="h-8 w-8 bg-gray-700 rounded-full"></div>
+                            <div class="h-8 w-8 bg-gray-700 rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="w-full flex items-center gap-4 bg-white/5 p-3 rounded-lg">
+                            <div class="h-10 w-10 rounded-full bg-gradient-to-r from-pink-500 to-orange-400"></div>
+                            <div class="flex-1 space-y-2">
+                                <div class="h-3 w-1/3 bg-gray-400 rounded"></div>
+                                <div class="h-2 w-1/4 bg-gray-600 rounded"></div>
+                            </div>
+                            <div class="h-6 w-16 bg-green-500/20 text-green-400 rounded px-2 py-1 text-xs">Active</div>
+                        </div>
+                        <div class="w-full flex items-center gap-4 bg-white/5 p-3 rounded-lg">
+                            <div class="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+                            <div class="flex-1 space-y-2">
+                                <div class="h-3 w-1/2 bg-gray-400 rounded"></div>
+                                <div class="h-2 w-1/3 bg-gray-600 rounded"></div>
+                            </div>
+                            <div class="h-6 w-16 bg-blue-500/20 text-blue-400 rounded px-2 py-1 text-xs">New</div>
+                        </div>
+                        <div class="w-full flex items-center gap-4 bg-white/5 p-3 rounded-lg opacity-50">
+                            <div class="h-10 w-10 rounded-full bg-gray-700"></div>
+                            <div class="flex-1 space-y-2">
+                                <div class="h-3 w-2/5 bg-gray-500 rounded"></div>
+                                <div class="h-2 w-1/4 bg-gray-600 rounded"></div>
+                            </div>
+                            <div class="h-6 w-16 bg-red-500/20 text-red-400 rounded px-2 py-1 text-xs">Offline</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating UI element -->
+                <div class="absolute -right-6 -bottom-6 glass-card p-4 rounded-xl shadow-xl flex items-center gap-4 animate-float"
+                    style="animation-delay: 1.5s;">
+                    <div class="h-12 w-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm">System Secure</p>
+                        <p class="text-xs text-gray-400">All services operational</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 opacity-0 animate-[fadeInUp_1s_ease-out_0.5s_forwards]">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Powerful Features</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Everything you need to manage your users in one beautifully
+                    designed platform.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-blue-500/20 group opacity-0 animate-[fadeInUp_1s_ease-out_0.6s_forwards]">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Secure Authentication</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Enterprise-grade security protecting your user
+                        data. Robust login flows and session management out of the box.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-purple-500/20 group opacity-0 animate-[fadeInUp_1s_ease-out_0.8s_forwards]">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Easy Customer Management</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Create, read, update, and delete users
+                        effortlessly. A clear overview of your entire customer base at a glance.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 hover:shadow-2xl hover:shadow-pink-500/20 group opacity-0 animate-[fadeInUp_1s_ease-out_1s_forwards]">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-pink-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fast & Responsive Interface</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Optimized performance ensuring lightning-fast load
+                        times. Flawless experience across all your desktop and mobile devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[#030712] -z-10"></div>
+        <div class="absolute top-0 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+
+        <div
+            class="max-w-4xl mx-auto px-6 text-center glass-card border border-white/10 rounded-3xl p-12 lg:p-20 shadow-2xl relative">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Start Managing Today</h2>
+            <p class="text-gray-400 mb-10 text-lg max-w-2xl mx-auto">
+                Join thousands of businesses managing their users with our platform. Simple integration, powerful
+                results.
+            </p>
+            <a href="/login"
+                class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-size-200 hover:bg-right transition-all duration-500 ease-in-out text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg shadow-purple-500/30 transform hover:-translate-y-1">
+                Launch Dashboard
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-6 h-6 rounded bg-gradient-to-tr from-electric to-softpurple flex items-center justify-center text-xs font-bold">
+                    UM</div>
+                <span class="font-bold text-gray-300">UserManage</span>
+            </div>
+            <p class="text-sm text-gray-500">&copy; 2026 User Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

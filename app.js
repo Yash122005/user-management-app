@@ -19,7 +19,18 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('landing');
+});
+
+// Mock Authentication route
+app.get('/login', (req, res) => {
+  // In a real app we'd authenticate here, for now redirect to dashboard
+  res.redirect('/dashboard');
+});
+
+// Dashboard Route (previously the index route)
+app.get('/dashboard', (req, res) => {
+  res.render('dashboard');
 });
 
 app.get('/read', async (req, res) => {
